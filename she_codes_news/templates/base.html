@@ -10,7 +10,7 @@
         <meta name="author" content="Khia Emslie-O'Brien">
         <link href="https://fonts.googleapis.com/css?family=Manjari&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
-        {% block stylessheets %}{% endblock %}
+        {% block stylesheets %}{% endblock %}
     </head>
 
     <body>
@@ -21,6 +21,7 @@
                 </a>
             </div>
             <!-- include nav here -->
+            {% include './nav.html' %}
         </header>
 
         <!-- content blocks here -->
