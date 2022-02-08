@@ -17,10 +17,12 @@ class CustomUserChangeForm(UserChangeForm):
         model = CustomUser
         fields = ['username', 'email']
 
-class CreateUserProfileView(UserCreationForm):
-#    something needs to go here??
+class CreateUserProfileForm(forms.Form):
+    avatar = forms.URLField(initial='http://', required=False)
+    Your_socials = forms.URLField(initial='http://', required=False)
+    Location = forms.CharField(max_length=50, required=False, help_text='Where are you writing from?')
+    About_you = forms.CharField(widget=forms.Textarea, max_length=500, help_text='Tells us about yourself :-)')
 
     class Meta:
         model = CustomUser
-        fields = ['name', 'a photo of you', 'your bio', 'social media']
-# these fields also need to be corrected 
+        fields = ['Your_socials', 'Location', 'About_you']
