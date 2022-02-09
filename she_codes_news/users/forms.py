@@ -18,10 +18,10 @@ class CustomUserChangeForm(UserChangeForm):
         fields = ['username', 'email']
 
 class CreateUserProfileForm(forms.Form):
-    avatar = forms.URLField(initial='http://', required=False)
-    Your_socials = forms.URLField(initial='http://', required=False)
+    avatar = forms.URLField(required=False)
+    Your_socials = forms.URLField(required=False)
     Location = forms.CharField(max_length=50, required=False, help_text='Where are you writing from?')
-    About_you = forms.CharField(widget=forms.Textarea, max_length=500, help_text='Tells us about yourself :-)')
+    About_you = forms.CharField(widget=forms.Textarea, max_length=500, required=False, help_text='Tell us about yourself :-)')
 
     class Meta:
         model = CustomUser
