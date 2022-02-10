@@ -7,5 +7,5 @@ urlpatterns = [
     path('create-account/', CreateAccountView.as_view(), name='createAccount'),
     path('create-profile/', CreateUserProfileView.as_view(), name='createProfile'),
     path('home-page/', HomePageView.as_view(), name='homePage'),
-    path('my/', get_user_profile, name='my'),
+    path('my-profile/', get_user_profile, name='my-profile'),
 ]

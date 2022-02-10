@@ -5,6 +5,7 @@ from django.views import generic
 from .models import CustomUser
 from .forms import CustomUserCreationForm, CreateUserProfileForm
 from django.shortcuts import render
+from news.models import NewsStory 
 
 
 class CreateAccountView(CreateView):
@@ -23,4 +24,6 @@ class HomePageView(generic.DetailView):
 
 def get_user_profile(request):
     user = request.user
-    return render(request, 'users/homePageView.html', {"user":user})
+    stories = NewsStory.objects.filter(author=request.user.id)
+    return render(request, 'users/homePageView.html', {"user": request.user, "stories": stories})
+    
