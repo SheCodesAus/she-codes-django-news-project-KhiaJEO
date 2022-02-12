@@ -33,9 +33,9 @@ class CreateUserProfileView(UpdateView):
     def get_object(self):
         return self.request.user
 
-class HomePageView(generic.DetailView):
+class YourProfile(generic.DetailView):
     model = CustomUser
-    template_name = 'users/homePageView.html'
+    template_name = 'users/yourprofile.html'
 
 
     

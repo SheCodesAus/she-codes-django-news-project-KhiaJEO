@@ -5,6 +5,12 @@
 <h2>My Profile</h2>
 {{customuser.username}}
 
+<div id="profile-wrapper">
+    <h2>{{ profile.about }}</h2>
+    {% comment %} add profile information here somehow {% endcomment %}
+    
+</div>
+
 
 <div id="stories">
     {% if customuser.newsstory_set.all %}
