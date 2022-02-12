@@ -28,7 +28,7 @@ class CreateUserProfileView(UpdateView):
     def get_success_url(self):
         print(self.request.user.id)
         print(type(self.get_form()))
-        return reverse_lazy('users:homePage', kwargs={"pk":self.request.user.id})
+        return reverse_lazy('users:yourprofile', kwargs={"pk":self.request.user.id})
 
     def get_object(self):
         return self.request.user
