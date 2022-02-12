@@ -17,7 +17,7 @@ class CustomUserChangeForm(UserChangeForm):
         model = CustomUser
         fields = ['username', 'email']
 
-class CreateUserProfileForm(forms.Form):
+class CreateUserProfileForm(forms.ModelForm):
     avatar = forms.URLField(required=False)
     Your_socials = forms.URLField(required=False)
     Location = forms.CharField(max_length=50, required=False, help_text='Where are you writing from?')

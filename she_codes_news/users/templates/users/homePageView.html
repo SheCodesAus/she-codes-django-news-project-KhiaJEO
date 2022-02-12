@@ -3,11 +3,12 @@
 
 {% block content %} 
 <h2>My Profile</h2>
-{{user.username}}
+{{customuser.username}}
+
 
 <div id="stories">
-    {% if stories %}
-        {% for story in stories %}
+    {% if customuser.newsstory_set.all %}
+        {% for story in customuser.newsstory_set.all %}
             {% include "news/storyCard.html" with story=story position=forloop.counter %}
         {% endfor %}
     {% else %}
