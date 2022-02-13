@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from django.db import models
 
 
+
 class NewsStory(models.Model):
     title = models.CharField(max_length=200)
     # author = models.CharField(max_length=200)
@@ -12,3 +13,7 @@ class NewsStory(models.Model):
     
     pub_date = models.DateTimeField()
     content = models.TextField()
+    
+    class Meta: 
+        ordering = ['-pub_date']
+

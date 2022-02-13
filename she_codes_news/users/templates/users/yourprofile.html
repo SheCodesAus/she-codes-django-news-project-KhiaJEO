@@ -3,20 +3,25 @@
 
 {% block content %} 
 <h2>My Profile</h2>
-{{customuser.username}}
+<h3>{{customuser.username}}</h3>
 
 <div id="profile-wrapper">
-    <h2>{{ profile.about }}</h2>
-    
-    <h2> 
-    location: {{ customuser.location }}
-    </h2>
-    {% comment %} add profile information here somehow {% endcomment %}
-    
+    <h4> 
+        {{ customuser.location }} <br>  
+        {{ customuser.about }} <br>
+        {% if request.user == customuser %}
+  <button><a href="{% url 'users:createProfile' %}">Edit Your Profile</a></button>
+{% else %}
+{% endif %}
+    </h4>
 </div>
 
-
+<h2>Your Stories</h2>
+ 
 <div id="stories">
+    <div id="Write New Story">
+        <a href="{% url 'news:newsStory' %}"><h2>Write New Story</h2></a>
+    </div>
     {% if customuser.newsstory_set.all %}
         {% for story in customuser.newsstory_set.all %}
             {% include "news/storyCard.html" with story=story position=forloop.counter %}

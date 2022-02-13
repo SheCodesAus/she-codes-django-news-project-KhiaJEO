@@ -5,7 +5,6 @@ from django.views import generic
 from .models import CustomUser
 from .forms import CustomUserCreationForm, CreateUserProfileForm
 from django.shortcuts import render
-from news.models import NewsStory 
 from django.contrib.auth import login
 
 
