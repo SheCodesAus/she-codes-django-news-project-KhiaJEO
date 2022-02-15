@@ -25,4 +25,4 @@ class CreateUserProfileForm(forms.ModelForm):
 
     class Meta:
         model = CustomUser
-        fields = ['socials', 'location', 'about']
+        fields = ['avatar', 'socials', 'location', 'about']
