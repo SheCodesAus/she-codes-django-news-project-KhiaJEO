@@ -31,4 +31,14 @@ class AddStoryView(generic.CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+# for the VIEW BY AUTH
     
+class ViewByAuthorView(generic.Listview):
+        model = NewsStory
+        template_name = 'news/viewbyauthor.html'     
+
+
+   def get_queryset(self):
+        '''Return all news stories.'''
+        return NewsStory.objects.all().order_by('-pub_date')

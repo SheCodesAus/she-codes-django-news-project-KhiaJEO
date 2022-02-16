@@ -1,8 +1,8 @@
 <nav>
     <a href="{% url 'news:index' %}">Home</a>
     {% if request.user.is_authenticated %} 
-    <a href="#">{{ user.username }}</a>
-    <a href="{% url 'users:yourprofile' request.user.id  %}">Your Profile</a>
+    <a href="{% url 'users:yourprofile' request.user.id %}">Welcome: {{ request.user.username }}!</a>
+    <a href="#">View by Author</a>
     <a href="{% url 'logout' %}">Logout</a>
     
     {% else %}
@@ -10,7 +10,6 @@
     <a href="{% url 'login' %}">Login</a>
     {% endif %}
 </nav>
-
 
 
 
