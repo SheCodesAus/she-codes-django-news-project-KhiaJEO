@@ -8,6 +8,10 @@
     {% block content %} 
 
     <h2>Latest News</h2>
+    
+    <div id="Write New Story">
+        <a href="{% url 'news:newsStory' %}"><h2>Write New Story</h2></a>
+    </div>
 
     <div id="latest-stories">
         {% if latest_stories %}
@@ -29,8 +33,9 @@
         {% endif %}
     </div>
 
-    <div id="Write New Story">
-    <a href="{% url 'news:newsStory' %}"><h2>Write New Story</h2></a>
-    </div>
     
+    <div id="View By Author">
+    <a href="{% url 'users:authors' %}"><h2>View By Author</h2></a>
+    </div>
+
     {% endblock %}

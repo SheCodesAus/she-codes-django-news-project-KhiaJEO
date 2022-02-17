@@ -6,6 +6,8 @@ from .models import CustomUser
 from .forms import CustomUserCreationForm, CreateUserProfileForm
 from django.shortcuts import render
 from django.contrib.auth import login
+from django.views.generic import DetailView, ListView
+from news.models import NewsStory
 
 
 class CreateAccountView(CreateView):
@@ -35,6 +37,16 @@ class CreateUserProfileView(UpdateView):
 class YourProfile(generic.DetailView):
     model = CustomUser
     template_name = 'users/yourprofile.html'
+
+
+# View by author
+class AuthorsView(ListView):
+    model = CustomUser
+    template_name = 'users/authors.html'
+    context_object_name = 'authors'
+
+
+    
 
 
     
