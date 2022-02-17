@@ -4,7 +4,7 @@ from django.views.generic.edit import CreateView, FormView, UpdateView
 from django.views import generic 
 from .models import CustomUser
 from .forms import CustomUserCreationForm, CreateUserProfileForm
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import login
 from django.views.generic import DetailView, ListView
 from news.models import NewsStory
@@ -45,6 +45,14 @@ class AuthorsView(ListView):
     template_name = 'users/authors.html'
     context_object_name = 'authors'
 
+    def get_queryset(self):
+        self.authors = get_object_or_404(CustomUser, name=self.kwargs['authors'])
+        return NewsStory.objects.filter(authors=self.authors)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['authors'] = self.authors
+        return context
 
     
 
