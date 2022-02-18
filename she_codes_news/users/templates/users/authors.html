@@ -4,8 +4,9 @@
 {% block content %} 
 <h2>Authors</h2>
 
-{% for author in authors %}
-                {% include "./yourprofile.html" with author=author position=forloop.counter %}
+    <div>
+        {% for author in authors %}
+            {% include "./yourprofile.html" with author=author position=forloop.counter %}
             {% endfor %}
             {{ author.name }}
         

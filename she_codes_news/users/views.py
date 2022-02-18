@@ -41,9 +41,9 @@ class YourProfile(generic.DetailView):
 
 # View by author
 class AuthorsView(ListView):
-    model = CustomUser
+    # model = CustomUser
     template_name = 'users/authors.html'
-    context_object_name = 'authors'
+    # context_object_name = 'authors'
 
     def get_queryset(self):
         self.authors = get_object_or_404(CustomUser, name=self.kwargs['authors'])
