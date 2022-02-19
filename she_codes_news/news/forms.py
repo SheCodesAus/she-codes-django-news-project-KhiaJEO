@@ -6,7 +6,7 @@ from django.utils import timezone
 class StoryForm(forms.ModelForm):
     class Meta:
         model = NewsStory
-        fields = ['title', 'pub_date', 'content']
+        fields = ['title', 'image', 'pub_date', 'content']
         # widgets = {
         # 'pub_date': forms.DateInput(format=('%m/%d/%y'), attrs={'class':'form-control', 'placeholder':'select a date', 'type':'date'}),
         # }

@@ -11,7 +11,10 @@
 }
 
 #latest-stories {
-    display: grid;
+    /* display: flexbox;
+    flex-direction: row;
+    flex-wrap: nowwrap;
+    justify-content: center; */
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 1px 1px;

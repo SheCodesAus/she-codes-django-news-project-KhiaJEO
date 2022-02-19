@@ -36,7 +36,7 @@ class AddStoryView(generic.CreateView):
 class EditStoryView(UpdateView):
     model = NewsStory
     template = 'news/newsstory_form.html'
-    fields = ['title', 'pub_date', 'content']
+    fields = ['title', 'image', 'pub_date', 'content']
     success_url = reverse_lazy('news:index')
 
 class DeleteStoryView(DeleteView):
