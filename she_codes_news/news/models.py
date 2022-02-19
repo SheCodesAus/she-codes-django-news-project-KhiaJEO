@@ -16,7 +16,6 @@ class NewsStory(models.Model):
     content = models.TextField()
     # category = models.CharField(max_length=225,)
     
-    
     class Meta: 
         ordering = ['-pub_date']
 

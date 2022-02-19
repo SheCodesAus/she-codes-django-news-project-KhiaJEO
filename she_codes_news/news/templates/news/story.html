@@ -18,5 +18,11 @@
         <img src="{% static '/news/images/placeholder-5.jpg' %}">
         {{ story.content|linebreaks }}
     </div>
+    
+{% if request.user == story.author %}
+    <a href="{% url 'news:editStory' story.id %}">Edit Story</a> <br/>
+    <a href="{% url 'news:deleteStory' story.id %}">Delete</a> <br/>
+{% else %}
+{% endif %}
 </div>
 {% endblock %} 

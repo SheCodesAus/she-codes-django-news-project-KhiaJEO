@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block stylesheets %} 
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+{% endblock %} 
+
+{% block content %}
+<h3>Are you sure you want to delete "{{ newsstory.title }}"?</h3>
+<br/>
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-secondary">Delete</button>
+    </div>
+
+{% endblock %} 

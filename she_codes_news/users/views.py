@@ -1,6 +1,6 @@
 
 from django.urls import reverse_lazy
-from django.views.generic.edit import CreateView, FormView, UpdateView
+from django.views.generic.edit import CreateView, FormView, UpdateView, DeleteView
 from django.views import generic 
 from .models import CustomUser
 from .forms import CustomUserCreationForm, CreateUserProfileForm
@@ -39,22 +39,9 @@ class YourProfile(generic.DetailView):
     template_name = 'users/yourprofile.html'
 
 
-# View by author
-class AuthorsView(ListView):
-    # model = CustomUser
-    template_name = 'users/authors.html'
-    # context_object_name = 'authors'
 
-    def get_queryset(self):
-        self.authors = get_object_or_404(CustomUser, name=self.kwargs['authors'])
-        return NewsStory.objects.filter(authors=self.authors)
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['authors'] = self.authors
-        return context
 
-    
 
 
     
