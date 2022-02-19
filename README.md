@@ -22,8 +22,9 @@ Things I am proud of:
 
 Things that wont work in Heroku:
 1. edit profile - so this means no new users or cool photos, and better, content.
-2. create new profile
-#sadness... 
+2. create new profile - On submit, it will take me to an error page however if I return to the home page I will actually be logged in as that new user.
+#sadness
+# I will look into these when I am back from Broome
 
 Please check out my screenshots as proof that everything was running smoothly on local server. 
 
