@@ -1,0 +1,16 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block content %} 
+<h2>Authors</h2>
+
+    <div>
+        {% for author in authors %}
+            {% include "./yourprofile.html" with author=author position=forloop.counter %}
+            {% endfor %}
+            {{ author.name }}
+        
+    </div>
+
+{% endblock %} 
+

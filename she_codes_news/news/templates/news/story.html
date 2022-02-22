@@ -1,8 +1,32 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block stylesheets %} 
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+{% endblock %} 
+
+{% block content %}
+
 <div id="story-wrapper">
     <h2>{{ story.title }}</h2>
-    <h4>{{ story.author }}</h4>
+    <h4> 
+        <a href="{% url 'users:yourprofile' story.author.id %}">
+        {{ story.author }}
+        </a>
+    </h4>
     <div id="story-content">
-        <img src="{% static '/news/images/placeholder-5.jpg' %}">
+        {% if story.image %}
+            <img src="{{ story.image }}" alt="image">
+        {% else %}
+            <img src="{% static '/news/images/placeholder-5.jpg' %}">
         {{ story.content|linebreaks }}
+        {% endif %}
     </div>
+    
+{% if request.user == story.author %}
+    <a href="{% url 'news:editStory' story.id %}">Edit Story</a> <br/>
+    <a href="{% url 'news:deleteStory' story.id %}">Delete</a> <br/>
+{% else %}
+{% endif %}
 </div>
+{% endblock %} 
